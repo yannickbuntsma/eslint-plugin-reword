@@ -2,21 +2,19 @@
  * @fileoverview Automatically reword variables to adhere to project based naming conventions.
  * @author Yannick Buntsma
  */
-"use strict";
+'use strict'
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-var requireIndex = require("requireindex");
+var requireIndex = require('requireindex')
 
 //------------------------------------------------------------------------------
 // Plugin Definition
 //------------------------------------------------------------------------------
 
-
 // import all rules in lib/rules
-module.exports.rules = requireIndex(__dirname + "/rules");
+const rules = requireIndex(__dirname + '/rules')
 
-
-
+export { rules }
