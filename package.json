@@ -1,0 +1,31 @@
+{
+  "name": "eslint-plugin-reword",
+  "version": "0.0.0",
+  "description": "Automatically reword variables to adhere to project based naming conventions.",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": {
+    "name": "Yannick Buntsma",
+    "email": "yannickbuntsma@gmail.com"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha tests --recursive"
+  },
+  "dependencies": {
+    "case": "^1.6.3",
+    "requireindex": "~1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.1.0",
+    "mocha": "^7.2.0",
+    "prettier": "^2.2.1"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "ISC"
+}
