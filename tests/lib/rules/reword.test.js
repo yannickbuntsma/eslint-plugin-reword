@@ -46,3 +46,50 @@ const createDefaultErrorMessage = (match) =>
     ],
   })
 })()
+;(() => {
+  const title = createTitle('replacing match in different sections of word')
+  const options = [[{ regex: 'teaSpoon', replacement: 'coffeeCup' }]]
+
+  ruleTester.run(title, rule, {
+    valid: [
+      {
+        code: "const coffeeSpoon = '___'",
+        options,
+      },
+      {
+        code: "const teaCup = '___'",
+        options,
+      },
+      {
+        code: 'function doThing(tea) {}',
+        options,
+      },
+    ],
+    invalid: [
+      {
+        code: "const teaSpoon = '___'",
+        output: "const coffeeCup = '___'",
+        options,
+        errors: [{ message: createDefaultErrorMessage('teaSpoon') }],
+      },
+      {
+        code: "const teaSpoonMaterial = '___'",
+        output: "const coffeeCupMaterial = '___'",
+        options,
+        errors: [{ message: createDefaultErrorMessage('teaSpoonMaterial') }],
+      },
+      {
+        code: 'function hasTeaSpoon() {}',
+        output: 'function hasCoffeeCup() {}',
+        options,
+        errors: [{ message: createDefaultErrorMessage('hasTeaSpoon') }],
+      },
+      {
+        code: 'function doThing(teaSpoon) {}',
+        output: 'function doThing(coffeeCup) {}',
+        options,
+        errors: [{ message: createDefaultErrorMessage('teaSpoon') }],
+      },
+    ],
+  })
+})()
