@@ -5,7 +5,8 @@
   "keywords": [
     "eslint",
     "eslintplugin",
-    "eslint-plugin"
+    "eslint-plugin",
+    "reword"
   ],
   "author": {
     "name": "Yannick Buntsma",
