@@ -1,0 +1,8 @@
+version = 1
+
+[merge]
+# Require that the automerge label be set for Kodiak to merge a PR. If you disable
+# this, Kodiak will immediately attempt to merge every PR you create. `true` by default,
+# but maybe a good idea to set explicitly.
+# https://kodiakhq.com/docs/config-reference#mergerequire_automerge_label
+require_automerge_label = true
